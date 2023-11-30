@@ -34,7 +34,7 @@ NLU project is developed by [Orcawise](https://www.orcawise.com/) NLP team, whic
     print(f"Predicted Relation: {prediction1}")
     ```
 
-3. **Custom BERT Model:**
+2. **Custom BERT Model:**
     - Run the `nlu_custom_model.py` file to initialize and use the Custom BERT model.
 
     ```python
@@ -45,6 +45,32 @@ NLU project is developed by [Orcawise](https://www.orcawise.com/) NLP team, whic
     predicted_relation = obj2.predict_relation(sentence)
     print(f"Predicted Relation: {predicted_relation}")
     ```
+
+3. **Connect to database:**
+    - Run the `connect_my_sql.py` file to connect to mySQL database and feed realtime data to models.
+
+    ```python
+    obj1 = OpenIEExtractor()
+    obj2 = CustomBertModel(model_name="bert-base-uncased", num_labels=4, checkpoint_path='version_0/checkpoints/epoch=1-step=356.ckpt')
+    
+    sentence = "Elon Musk was born in South Africa." 
+    prediction1 = obj1.extract_relations(sentence)
+    prediction2 = obj2.predict_relation(sentence)
+    ```
+4. **Calculate accuracy:**
+    - Run the `accuracy_cal.py` file to calculate the accuracy of the models' results stored in the database.
+
+    ```python
+    total_rows = len(accuracy_results)
+    acc_custom_total = sum(row[6] for row in accuracy_results)
+    acc_pretrained_total = sum(row[7] for row in accuracy_results)
+
+    acc_custom_accuracy = acc_custom_total / total_rows if total_rows > 0 else 0
+    acc_pretrained_accuracy = acc_pretrained_total / total_rows if total_rows > 0 else 0
+
+    print(f"Accuracy for acc_custom: {acc_custom_accuracy:.2%}")
+    print(f"Accuracy for acc_pretrained: {acc_pretrained_accuracy:.2%}")
+    ```   
 
 ## Database
 
