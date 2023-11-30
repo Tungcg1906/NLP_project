@@ -24,7 +24,7 @@ NLU project is developed by [Orcawise](https://www.orcawise.com/) NLP team, whic
 - **Name:** Custom BERT Model
 - **Description:** The custom BERT model is fine-tuned for relation classification. It uses the 'bert-base-uncased' pretrained model and has four labels: 'noRelation', 'employedBy', 'managerOf', and 'locatedAt'.
 - **Diagram:**
- ![Diagram](Diagram/Custom_code_diagram.drawio.png)
+ ![Diagram](Diagram/NLU_diag.png)
 
 ## Database
 
