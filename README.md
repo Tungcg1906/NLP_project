@@ -50,6 +50,7 @@ NLU project is developed by [Orcawise](https://www.orcawise.com/) NLP team, whic
     - Run the `connect_my_sql.py` file to connect to mySQL database and feed realtime data to models.
 
     ```python
+    import mysql.connector
     obj1 = OpenIEExtractor()
     obj2 = CustomBertModel(model_name="bert-base-uncased", num_labels=4, checkpoint_path='version_0/checkpoints/epoch=1-step=356.ckpt')
     
@@ -61,6 +62,7 @@ NLU project is developed by [Orcawise](https://www.orcawise.com/) NLP team, whic
     - Run the `accuracy_cal.py` file to calculate the accuracy of the models' results stored in the database.
 
     ```python
+    import mysql.connector
     total_rows = len(accuracy_results)
     acc_custom_total = sum(row[6] for row in accuracy_results)
     acc_pretrained_total = sum(row[7] for row in accuracy_results)
