@@ -6,6 +6,9 @@ NLU project is developed by [Orcawise](https://www.orcawise.com/) NLP team, whic
 
 - **Name:** Stanford OpenIE
 - **Description:** The pretrained OpenIE model is based on Stanford's OpenIE library. It extracts relations from input text using natural language processing techniques.
+- **Diagram:**
+  
+ ![Diagram](Diagram/stanford.png)
 
 ##  Custom BERT Model
 
