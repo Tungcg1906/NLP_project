@@ -17,6 +17,11 @@ NLU project is developed by [Orcawise](https://www.orcawise.com/) NLP team, whic
 - **Diagram:**
  ![Diagram](Diagram/Custom_code_diagram.drawio.png)
 
+## Database
+
+- **Database Used:** MySQL
+- **Description:** Open-source relational database management system, widely used for its reliability and scalability. Supports SQL, making it a popular choice for web applications and software projects.
+
 ## How to Run the Code
 
 1. **Pretrained OpenIE Model:**
@@ -47,17 +52,31 @@ NLU project is developed by [Orcawise](https://www.orcawise.com/) NLP team, whic
     ```
 
 3. **Connect to database:**
-    - Run the `connect_my_sql.py` file to connect to mySQL database and feed realtime data to models.
-
-    ```python
-    import mysql.connector
-    obj1 = OpenIEExtractor()
-    obj2 = CustomBertModel(model_name="bert-base-uncased", num_labels=4, checkpoint_path='version_0/checkpoints/epoch=1-step=356.ckpt')
+    - **Database Used:** MySQL
+    - **Connection from Python with Database:**
+        - The database connection is established using the `mysql.connector` library.
+        - Connection details:
+            - Host: localhost
+            - Port: 3306
+            - User: root
+            - Password: [Password]
+            - Database: test_nlu
+    - **How to Execute the Code:**
+        - Run the `connect_my_sql.py` file to connect to the database, create a table, store predictions, and close the connection.
     
-    sentence = "Elon Musk was born in South Africa." 
-    prediction1 = obj1.extract_relations(sentence)
-    prediction2 = obj2.predict_relation(sentence)
-    ```
+        ```python
+        # Example usage
+        obj1 = OpenIEExtractor()
+        obj2 = CustomBertModel(model_name="bert-base-uncased", num_labels=4, checkpoint_path='path/to/your/checkpoint.ckpt')
+    
+        sentence = "Finland is often referred to as the 'Land of a Thousand Lakes', but in reality, it has over 188,000 lakes."
+        prediction1 = obj1.extract_relations(sentence)
+        prediction2 = obj2.predict_relation(sentence)
+    
+        store_predictions(sentence, prediction2, prediction1)
+        ```
+
+    Make sure to replace placeholders such as 'path/to/your/checkpoint.ckpt' and '[Password]' with the actual paths and passwords.
 4. **Calculate accuracy:**
     - Run the `accuracy_cal.py` file to calculate the accuracy of the models' results stored in the database.
 
@@ -74,32 +93,7 @@ NLU project is developed by [Orcawise](https://www.orcawise.com/) NLP team, whic
     print(f"Accuracy for acc_pretrained: {acc_pretrained_accuracy:.2%}")
     ```   
 
-## Database
 
-- **Database Used:** MySQL
-- **Connection from Python with Database:**
-    - The database connection is established using the `mysql.connector` library.
-    - Connection details:
-        - Host: localhost
-        - Port: 3306
-        - User: root
-        - Password: [YourPassword]
-        - Database: test_nlu
-- **How to Execute the Code:**
-    - Run the `connect_my_sql.py` file to connect to the database, create a table, store predictions, and close the connection.
 
-    ```python
-    # Example usage
-    obj1 = OpenIEExtractor()
-    obj2 = CustomBertModel(model_name="bert-base-uncased", num_labels=4, checkpoint_path='path/to/your/checkpoint.ckpt')
-
-    sentence = "Finland is often referred to as the 'Land of a Thousand Lakes', but in reality, it has over 188,000 lakes."
-    prediction1 = obj1.extract_relations(sentence)
-    prediction2 = obj2.predict_relation(sentence)
-
-    store_predictions(sentence, prediction2, prediction1)
-    ```
-
-Make sure to replace placeholders such as 'path/to/your/checkpoint.ckpt' and '[YourPassword]' with the actual paths and passwords.
 
 
