@@ -91,7 +91,7 @@ NLU project is developed by [Orcawise](https://www.orcawise.com/) NLP team, whic
 
     ```python
     import mysql.connector
-        # Update values in the 'openie_generalize' column based on conditions
+    # Update values in the 'openie_generalize' column based on conditions
     update_query = """
         UPDATE nlu_table
         SET openie_generlize = 
