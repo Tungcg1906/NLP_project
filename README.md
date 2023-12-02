@@ -87,10 +87,37 @@ NLU project is developed by [Orcawise](https://www.orcawise.com/) NLP team, whic
 
     Make sure to replace placeholders such as 'path/to/your/checkpoint.ckpt' and '[Password]' with the actual paths and passwords.
 4. **Calculate accuracy:**
-    - Run the `accuracy_cal.py` file to calculate the accuracy of the models' results stored in the database.
+    - Run the `accuracy_cal.py` file to generalize the result of openie and the calculate the accuracy of the models' results stored in the database.
 
     ```python
     import mysql.connector
+        # Update values in the 'openie_generalize' column based on conditions
+    update_query = """
+        UPDATE nlu_table
+        SET openie_generlize = 
+            CASE
+                WHEN openie_prediction LIKE '%CEO%' THEN 'managerOf'
+                WHEN openie_prediction LIKE '%head%' THEN 'managerOf'
+                WHEN openie_prediction LIKE '%founder%' THEN 'managerOf'
+                WHEN openie_prediction LIKE '%CFO%' THEN 'managerOf'
+                WHEN openie_prediction LIKE 'worked %' THEN 'employedBy'
+                WHEN openie_prediction LIKE 'works%' THEN 'employedBy'
+                WHEN openie_prediction LIKE 'work%' THEN 'employedBy'
+                WHEN openie_prediction LIKE 'working%' THEN 'employedBy'
+                WHEN openie_prediction LIKE 'was employed%' THEN 'employedBy'
+                WHEN openie_prediction LIKE 'employed%' THEN 'employedBy'
+                WHEN openie_prediction LIKE 'hired%' THEN 'employedBy'
+                WHEN openie_prediction LIKE 'served%' THEN 'employedBy'
+                WHEN openie_prediction LIKE '%located%' THEN 'locatedAt'
+                WHEN openie_prediction LIKE '%is in%' THEN 'locatedAt'
+                WHEN openie_prediction IS NULL THEN 'noRelation'
+                ELSE 'noRelation'
+            END;
+    """
+    cursor.execute(update_query)
+    connection.commit()
+    
+    # Calculate and print the total accuracy
     total_rows = len(accuracy_results)
     acc_custom_total = sum(row[6] for row in accuracy_results)
     acc_pretrained_total = sum(row[7] for row in accuracy_results)
@@ -98,8 +125,8 @@ NLU project is developed by [Orcawise](https://www.orcawise.com/) NLP team, whic
     acc_custom_accuracy = acc_custom_total / total_rows if total_rows > 0 else 0
     acc_pretrained_accuracy = acc_pretrained_total / total_rows if total_rows > 0 else 0
 
-    print(f"Accuracy for acc_custom: {acc_custom_accuracy:.2%}")
-    print(f"Accuracy for acc_pretrained: {acc_pretrained_accuracy:.2%}")
+    print(f"Total accuracy for acc_custom: {acc_custom_accuracy:.2%}")
+    print(f"Total accuracy for acc_pretrained: {acc_pretrained_accuracy:.2%}")
     ```   
 
 
