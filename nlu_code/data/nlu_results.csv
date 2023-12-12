@@ -1,0 +1,101 @@
+id,sentence,custom_bert_prediction,openie_prediction,ground_truth,openie_generlize,acc_custom,acc_pretrained
+1,Elon Musk was born in South Africa.,locatedAt,was born in,noRelation,locatedAt,0,0
+2,Peter Hadju is a Hungarian professor.,locatedAt,is,noRelation,noRelation,0,1
+3,Bill Gate is co-founder of Microsoft.,managerOf,is co-founder of,managerOf,managerOf,1,1
+4,Cows moo with different accents.,managerOf,moo with,noRelation,noRelation,0,1
+5,Satya Nadella is employed by Microsoft.,locatedAt,is employed by,employedBy,noRelation,0,0
+6,Hazel Robinson is associated with Brunel University in HR.,locatedAt,is,employedBy,noRelation,0,0
+7,Microsoft recently hired Jane Doe as its new Chief Technology Officer.,locatedAt,recently hired Jane Doe as,managerOf,noRelation,0,0
+8,Steve Jobs served as the visionary leader and manager of Apple.,managerOf,served as,managerOf,employedBy,1,0
+9,The headquarters of Amazon is located in Seattle.,managerOf,is located in,locatedAt,locatedAt,0,1
+10,IBM produces cutting-edge technology solutions.,managerOf,produces,noRelation,noRelation,0,1
+11,"SpaceX employs thousands of engineers, including Emily Johnson.",managerOf,,employedBy,noRelation,0,0
+12,Mark Zuckerberg is the founder and manager of Facebook.,locatedAt,is,managerOf,noRelation,0,0
+13,The Colosseum is located in Rome.,locatedAt,is located in,locatedAt,locatedAt,1,1
+14,Coca-Cola is a popular beverage brand around the world.,locatedAt,is,noRelation,noRelation,0,1
+15,Marie Curie was employed by the University of Paris.,managerOf,was employed by,employedBy,employedBy,0,1
+16,"The Sydney Opera House is located in Sydney, Australia.",locatedAt,is,locatedAt,noRelation,1,0
+17,John Smith is employed by Google as a software engineer.,managerOf,is,employedBy,noRelation,0,0
+18,Angela Rodriguez is the lead manager of the Marketing Department at IBM.,employedBy,is,managerOf,noRelation,0,0
+19,"The headquarters of Tesla is located in Palo Alto, California.",managerOf,is located in,locatedAt,locatedAt,0,1
+20,Sony manufactures high-quality electronics and entertainment products.,managerOf,manufactures,noRelation,noRelation,0,1
+21,Professor Alan Johnson is hired by Harvard University as a physics lecturer.,managerOf,is,employedBy,noRelation,0,0
+22,Mr.Bean is living in Italy.,managerOf,is living in,noRelation,noRelation,0,1
+23,"The famous Louvre Museum is in Paris, France.",managerOf,is in,locatedAt,locatedAt,0,1
+24,Facebook is a social media platform used by billions of people.,locatedAt,is,noRelation,noRelation,0,1
+25,Dr. Emily Chen works for the Mayo Clinic as a neurosurgeon.,managerOf,works for,managerOf,employedBy,1,0
+26,"The Tokyo Tower is located in Minato, Tokyo, Japan.",locatedAt,is,locatedAt,noRelation,1,0
+27,Elon Musk is the head of Tesla.,employedBy,is head of,managerOf,managerOf,0,1
+28,Mr.Pham is the CEO of Vingroup.,managerOf,is CEO of,managerOf,managerOf,1,1
+29,John Smith works for the FBI.,managerOf,works for,employedBy,employedBy,0,1
+30,Ha Long bay is in Vietnam.,managerOf,is in,locatedAt,locatedAt,0,1
+31,White House is in the United State of America.,locatedAt,is in,locatedAt,locatedAt,1,1
+32,Simon Simson is working as a scientist at CERN.,managerOf,is working at,employedBy,noRelation,0,0
+33,Sato Koji is the director of Toyota.,managerOf,is,managerOf,noRelation,1,0
+34,Toshihiro Suzuki is the head manager of Suzuki.,employedBy,is,managerOf,noRelation,0,0
+35,Michio Suzuki was the founder of Suzuki.,managerOf,was founder of,managerOf,managerOf,1,1
+36,Atazake was hired by Google.,locatedAt,was hired by,employedBy,noRelation,0,0
+37,Jonathan Smith works at Apple as a software engineer.,managerOf,works as,employedBy,employedBy,0,1
+38,Mushashi used to work for Shogun's family.,managerOf,used,employedBy,noRelation,0,0
+39,The Great Pyramid is in Egypt.,managerOf,is in,locatedAt,locatedAt,0,1
+40,"Orcawise' headquarter is located in Dublin, Ireland.",managerOf,is located in,locatedAt,locatedAt,0,1
+41,"Nasa' headquarter is in Texas, USA.",locatedAt,is in,locatedAt,locatedAt,1,1
+42,Black holes are the most mysterious objects in the universe.,managerOf,are most mysterious objects in,noRelation,noRelation,0,1
+43,Albert Einstein won a Nobel prize in 1921.,managerOf,won,noRelation,noRelation,0,1
+44,Heisenberg is known for his theory in quantum mechanics.,locatedAt,is in,noRelation,locatedAt,0,0
+45,Sunda Pinchai Google is making headline.,managerOf,is making,noRelation,noRelation,0,1
+46,KEUN SUNG YOOK is the CFO of Sam Sung.,managerOf,is CFO of,managerOf,managerOf,1,1
+47,Kim Jung Suk works for Nokia.,managerOf,works for,employedBy,employedBy,0,1
+48,Samsung's headquarter is located in South Korea.,locatedAt,is located in,locatedAt,locatedAt,1,1
+49,Mr. Geller was employed by Google.,employedBy,was employed by,employedBy,employedBy,1,1
+50,Google employed Mr. Geller.,managerOf,employed,employedBy,employedBy,0,1
+51,South Africa is where Elon Mush was born.,managerOf,was,noRelation,noRelation,0,1
+52,Hungarian professor is Peter Hadju.,managerOf,is,noRelation,noRelation,0,1
+53,Toyota has Sato Koji as a director.,managerOf,has,managerOf,noRelation,1,0
+54,Suzuki has Toshihiro Suzuki as a head manager.,locatedAt,has Toshihiro Suzuki as,managerOf,noRelation,0,0
+55,"In Rome, the Colosseum is located.",managerOf,is,locatedAt,noRelation,0,0
+56,"In Seattle, the headquarters of Amazon is located.",managerOf,is,locatedAt,noRelation,0,0
+57,Cutting-edge technology solutions are produced by IBM.,managerOf,are produced by,noRelation,noRelation,0,1
+58,"Palo Alto, California is where the headquarter of Tesla located.",locatedAt,,locatedAt,noRelation,1,0
+59,Havard University hired professor Alan Johnson as a physics lecturer.,managerOf,hired professor Alan Johnson as,employedBy,employedBy,0,1
+60,CEO of Vingroup is mr.Pham.,managerOf,is,managerOf,noRelation,1,0
+61,"In South Africa, Elon Musk was born.",managerOf,was born In,locatedAt,locatedAt,0,1
+62,South Africa is the birthplace of Elon Musk.,managerOf,is,locatedAt,noRelation,0,0
+63,"Microsoft, founded by Bill Gates, has him as a co-founder.",managerOf,has,managerOf,noRelation,1,0
+64,The co-founder of Microsoft is Bill Gates.,managerOf,is,managerOf,noRelation,1,0
+65,Emily Johnson is among the thousands of engineers employed by SpaceX.,managerOf,,employedBy,noRelation,0,0
+66,Emily Johnson is employed by SpaceX.,managerOf,is employed by,employedBy,noRelation,0,0
+67,Quantum mechanics is a field where Heisenberg has left his theory.,managerOf,is field,noRelation,noRelation,0,1
+68,"In the quantum mechanics, Heisenberg's theory stands out as a milestone.",managerOf,has,noRelation,noRelation,0,1
+69,The University of Paris employed Marie Curie for her groundbreaking research.,managerOf,employed Marie Curie for,employedBy,employedBy,0,1
+70,In the employment of the University of Paris was Marie Curie.,managerOf,is In,employedBy,locatedAt,0,0
+71,"Located in Minato, Tokyo, Japan is the Tokyo Tower.",locatedAt,is,locatedAt,noRelation,1,0
+72,Viet Nam is where Ha Long bay located.,managerOf,,locatedAt,noRelation,0,0
+73,Serving as the CFO of Sam Sung is KEUN SUNG YOOK.,managerOf,is,managerOf,noRelation,1,0
+74,Sam Sung has KEUN SUNG YOOK as its CFO.,managerOf,has,managerOf,noRelation,1,0
+75,Cows express their moos in various accents.,managerOf,express,noRelation,noRelation,0,1
+76,"The mooing of cows varies, featuring different accents.",managerOf,,noRelation,noRelation,0,1
+77,Google hired Atazake.,managerOf,hired,employedBy,employedBy,0,1
+78,Hired by Google is Atazake.,managerOf,is,employedBy,noRelation,0,0
+79,Residing in Italy is Mr. Bean.,managerOf,is,noRelation,noRelation,0,1
+80,Italy is where Mr. Bean currently calls home.,managerOf,,noRelation,noRelation,0,1
+81,"Paris, France is where the iconic Louvre Museum is located.",locatedAt,is,locatedAt,noRelation,1,0
+82,"Located in Paris, France, is the renowned Louvre Museum.",locatedAt,is,locatedAt,noRelation,1,0
+83,Tesla has Elon Musk at the helm as its leader.,employedBy,has Elon Musk as,managerOf,managerOf,0,1
+84,"At the forefront of Tesla is Elon Musk, leading the company.",managerOf,leading,managerOf,managerOf,1,1
+85,"In the universe, nothing rivals the enigma of black holes.",locatedAt,rivals enigma In,noRelation,noRelation,0,1
+86,The most mysterious entities in the universe are black holes.,managerOf,is in,noRelation,locatedAt,0,0
+87,Located in the United States of America is the White House.,locatedAt,is,locatedAt,noRelation,1,0
+88,In the United States of America locates the renowned White House.,managerOf,,locatedAt,noRelation,0,0
+89,Serving Nokia is Kim Jung Suk as an employee.,managerOf,is,employedBy,noRelation,0,0
+90,Nokia is served Kim Jung Suk as an employee.,managerOf,is served as,employedBy,noRelation,0,0
+91,Founder of Suzuki was Michio Suzuki.,managerOf,was,managerOf,noRelation,1,0
+92,"Michio Suzuki, credited as the founder, established Suzuki.",managerOf,credited as,managerOf,noRelation,1,0
+93,The Mayo Clinic has Dr. Emily Chen as a neurosurgeon.,locatedAt,has,employedBy,noRelation,0,0
+94,"At the Mayo Clinic, Dr. Emily Chen serves as a neurosurgeon.",locatedAt,serves At,employedBy,employedBy,0,1
+95,"At IBM, cutting-edge technology solutions are developed.",managerOf,are developed At,noRelation,noRelation,0,1
+96,Producing cutting-edge technology solutions is a specialty of IBM.,employedBy,is,noRelation,noRelation,0,1
+97,"At Toyota, Sato Koji is the director.",managerOf,is,managerOf,noRelation,1,0
+98,The director of Toyota is Sato Koji.,managerOf,is,managerOf,noRelation,1,0
+99,Egypt is where the The Great Pyramid located.,managerOf,,locatedAt,noRelation,0,0
+100, Located in Egypt is The Great Pyramid.,managerOf,is,locatedAt,noRelation,0,0
