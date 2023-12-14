@@ -3,7 +3,7 @@
 Nature Language Understanding research & development project is developed by [Orcawise](https://www.orcawise.com/) NLP team, which focus on uncovering named entity relations (NER) within the data, leading to the extraction of valuable insights and knowledge. We achieve this by employing both a pre-defined model (StanfordOpenIE) and a fine-tuned model (CustomBertModel). Our primary goal is to extract relations from sentences, specifically targeting four key relationships: managerOf, employedBy, locatedAt, and noRelation.
 
 ## Table of Contents
-  - [Preprocess the data](#preprocess-data)
+  - [Preprocess the data](#preprocess-the-data)
   - [Pretrained OpenIE Model](#pretrained-openie-model)
   - [Custom BERT Model](#custom-bert-model)
   - [Database](#database)
