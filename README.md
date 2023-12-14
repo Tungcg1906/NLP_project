@@ -12,6 +12,8 @@ Nature Language Understanding research & development project is developed by [Or
 
 ## Preprocess the data
 
+The data collection process involves web scraping, followed by annotation using Doccano to extract information pertaining to entities such as PERSON, ORG, and GPE within sentences. Subsequently, the annotated data can be processed using `doccano_into_csv.py` to convert the JSONL file into a CSV format. This is followed by the execution of `Class_final_code_cleaning.py`, `augment_cleaned.py` and " `Combination_spin_class.py` to produce the final dataset for training the model.
+
 
 ##  Pretrained OpenIE Model
 
