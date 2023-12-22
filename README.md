@@ -90,47 +90,36 @@ The data collection process involves web scraping, followed by annotation using 
         ```
 
     Make sure to replace placeholders such as 'path/to/your/checkpoint.ckpt' and '[Password]' with the actual paths and passwords.
-4. **Calculate accuracy:**
-    - Run the `accuracy_cal.py` file to generalize the result of openie and the calculate the accuracy of the models' results stored in the database.
+4. **Testing model with real-time data:**
+    - Run the jupyter notebook `testing_custom_bert_on_real_time_data.ipynb` file to generalize the result of openie and the calculate the accuracy of the models' results.
 
     ```python
-    import mysql.connector
-    # Update values in the 'openie_generalize' column based on conditions
-    update_query = """
-        UPDATE nlu_table
-        SET openie_generlize = 
-            CASE
-                WHEN openie_prediction LIKE '%CEO%' THEN 'managerOf'
-                WHEN openie_prediction LIKE '%head%' THEN 'managerOf'
-                WHEN openie_prediction LIKE '%founder%' THEN 'managerOf'
-                WHEN openie_prediction LIKE '%CFO%' THEN 'managerOf'
-                WHEN openie_prediction LIKE 'worked %' THEN 'employedBy'
-                WHEN openie_prediction LIKE 'works%' THEN 'employedBy'
-                WHEN openie_prediction LIKE 'work%' THEN 'employedBy'
-                WHEN openie_prediction LIKE 'working%' THEN 'employedBy'
-                WHEN openie_prediction LIKE 'was employed%' THEN 'employedBy'
-                WHEN openie_prediction LIKE 'employed%' THEN 'employedBy'
-                WHEN openie_prediction LIKE 'hired%' THEN 'employedBy'
-                WHEN openie_prediction LIKE 'served%' THEN 'employedBy'
-                WHEN openie_prediction LIKE '%located%' THEN 'locatedAt'
-                WHEN openie_prediction LIKE '%is in%' THEN 'locatedAt'
-                WHEN openie_prediction IS NULL THEN 'noRelation'
-                ELSE 'noRelation'
-            END;
-    """
-    cursor.execute(update_query)
-    connection.commit()
+    # Iterate through each row in the DataFrame
+    for index, row in df.iterrows():
+        # Get the sentence from the 'sentence' column
+        sentence = row['sentence']
+
+        # Predict the relation for the current sentence
+        predicted_relation = obj.predict_relation(sentence)
+        predicted_relation1 = obj1.predict_relation(sentence)
+        predicted_relation2 = obj2.extract_relations(sentence)
+        
     
-    # Calculate and print the total accuracy
-    total_rows = len(accuracy_results)
-    acc_custom_total = sum(row[6] for row in accuracy_results)
-    acc_pretrained_total = sum(row[7] for row in accuracy_results)
+        # Append the predicted relation to the list
+        predictions.append(predicted_relation)
+        predictions1.append(predicted_relation1)
+        predictions2.append(predicted_relation2)
+    
+        # Compare the predicted relation with the 'ground_truth' column
+        ground_truth = row['ground_truth']
+        accuracy = 1 if predicted_relation == ground_truth else 0
+        accuracy1 = 1 if predicted_relation1 == ground_truth else 0
+    
+    
+        # Append the accuracy value to the list
+        accuracy_values.append(accuracy)
+        accuracy_values1.append(accuracy1)
 
-    acc_custom_accuracy = acc_custom_total / total_rows if total_rows > 0 else 0
-    acc_pretrained_accuracy = acc_pretrained_total / total_rows if total_rows > 0 else 0
-
-    print(f"Total accuracy for acc_custom: {acc_custom_accuracy:.2%}")
-    print(f"Total accuracy for acc_pretrained: {acc_pretrained_accuracy:.2%}")
     ```   
 
 
