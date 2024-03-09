@@ -18,7 +18,7 @@ The data collection process involves web scraping, followed by annotation using 
 ##  Pretrained OpenIE Model
 
 - **Name:** Stanford OpenIE
-- **Description:** The pretrained OpenIE model is based on Stanford's OpenIE library. It extracts relations from input text using natural language processing techniques.
+- **Description:** The pretrained Stanford OpenIE model is based on Stanford's OpenIE library. It extracts relations from input text using natural language processing techniques.
 - **Diagram:**
   
  ![Diagram](Diagram/stanford.png)
