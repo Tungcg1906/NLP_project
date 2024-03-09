@@ -26,7 +26,7 @@ The data collection process involves web scraping, followed by annotation using 
 ##  Custom BERT Model
 
 - **Name:** Custom BERT Model
-- **Description:** The custom BERT model is fine-tuned for relation classification. It uses the 'bert-base-uncased' pretrained model and has four labels: 'noRelation', 'employedBy', 'managerOf', and 'locatedAt'.
+- **Description:** The custom BERT model is fine-tuned for relation classification. It uses the 'bert-base-uncased' pretrained model and has four labels: '_noRelation_', '_employedBy_', '_managerOf_', and '_locatedAt_'.
 - **Diagram:**
  ![Diagram](Diagram/NLU_diag.png)
 
